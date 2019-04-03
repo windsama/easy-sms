@@ -34,6 +34,11 @@ abstract class Gateway implements GatewayInterface
     protected $timeout;
 
     /**
+     * @var string
+     */
+    protected $force_ip_resolve;
+
+    /**
      * Gateway constructor.
      *
      * @param array $config
