@@ -94,6 +94,7 @@ trait HasHttpRequest
         $options = [
             'base_uri' => method_exists($this, 'getBaseUri') ? $this->getBaseUri() : '',
             'timeout' => method_exists($this, 'getTimeout') ? $this->getTimeout() : 5.0,
+            'force_ip_resolve' => method_exists($this, 'getForceIpResolve') ? $this->getForceIpResolve() : 'v4',
         ];
 
         return $options;

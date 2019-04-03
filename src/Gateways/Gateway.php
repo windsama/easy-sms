@@ -21,6 +21,8 @@ abstract class Gateway implements GatewayInterface
 {
     const DEFAULT_TIMEOUT = 5.0;
 
+    const DEFAULT_FORCE_IP_RESOLVE = 'v4';
+
     /**
      * @var \Overtrue\EasySms\Support\Config
      */
@@ -49,6 +51,14 @@ abstract class Gateway implements GatewayInterface
     public function getTimeout()
     {
         return $this->timeout ?: $this->config->get('timeout', self::DEFAULT_TIMEOUT);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getForceIpResolve()
+    {
+        return $this->force_ip_resolve ?: $this->config->get('force_ip_resolve', self::DEFAULT_FORCE_IP_RESOLVE);
     }
 
     /**
